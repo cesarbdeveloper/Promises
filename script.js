@@ -13,6 +13,15 @@ function prepararPlatillo(nombre, tiempo) {
 
 function iniciarOrden() {
   log.innerHTML = ""; // Limpiar log
+
+  // Simular 15% de probabilidad de error
+  const probabilidadError = Math.random();
+  if (probabilidadError < 0.15) {
+    log.innerHTML = `<p style="color: red;"><strong>❌ Ocurrió un error. Inicie su pedido nuevamente.</strong></p>`;
+    console.error("❌ Error en la orden. Reinicie.");
+    return;
+  }
+
   prepararPlatillo("Bebida", 2000)
     .then(() => prepararPlatillo("Pizza", 3000))
     .then(() => prepararPlatillo("Postre", 1500))
