@@ -16,7 +16,7 @@ function iniciarOrden() {
 
   // Simular 15% de probabilidad de error
   const probabilidadError = Math.random();
-  if (probabilidadError < 0.15) {
+  if (probabilidadError < 0.7) {
     log.innerHTML = `<p style="color: red;"><strong>❌ Ocurrió un error. Inicie su pedido nuevamente.</strong></p>`;
     console.error("❌ Error en la orden. Reinicie.");
     return;
